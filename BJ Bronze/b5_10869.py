@@ -4,8 +4,6 @@ INPUT = sys.stdin.readline
 
 a, b =  INPUT().split()
 A, B = int(a), int(b)
-# num = list(map(int, INPUT().split()))
-# A, B = num[0], num[1]
 
 print(A + B)
 print(A - B)
