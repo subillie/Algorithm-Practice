@@ -1,5 +1,4 @@
 // 1152 단어의 개수
-
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
