@@ -1,3 +1,4 @@
+// 1264 모음의 개수
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
