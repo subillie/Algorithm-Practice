@@ -1,3 +1,4 @@
+# Slicing Practice
 arr = ['a', 'b', 'c', 'd', 'e']
 
 print("[::2]", *arr[::2])  # a c e
