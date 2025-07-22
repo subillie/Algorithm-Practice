@@ -15,7 +15,6 @@ print(False or None)  # None
 print(None or False)  # False
 print(False and None)  # False
 print(None and False)  # None
-
 print()
 
 # None
