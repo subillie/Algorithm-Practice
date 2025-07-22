@@ -3,7 +3,6 @@ T = int(input())
 for t in range(T):
     N = int(input())
     matrix = [list(input().split()) for _ in range(N)]
-    row = [[] for _ in range(N)]
     mat_90 = [list(row) for row in zip(*matrix[::-1])]
     mat_180 = [row[::-1] for row in matrix[::-1]]
     mat_270 = [list(row) for row in zip(*matrix)][::-1]
