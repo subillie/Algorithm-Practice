@@ -4,13 +4,14 @@ import sys
 INPUT = sys.stdin.readline
 
 msg = INPUT().rstrip()
-msg_len = len(msg)
-for r in range(int(sqrt(msg_len)), 0, -1):
-    if msg_len % r == 0:
-        c = msg_len // r
+length = len(msg)
+
+for R in range(int(sqrt(length)), 0, -1):
+    if length % R == 0:
+        C = length // R
         break
-matrix = [[msg[row * c + col] for col in range(c)] for row in range(r)]
-for col in range(c):
-    for row in range(r):
-        print(matrix[row][col], end="")
+
+for r in range(R):
+    for c in range(C):
+        print(msg[c * R + r], end="")
 print()
