@@ -20,8 +20,6 @@ def get_weather_by_city(city_name: str) -> json:
     - API key가 포함되어 있으니 주의
     """
     api_key="ed075917fca82f068759a3f480081748"
-    city_name = "Seoul"
-    country_code = "KR"
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
     response = requests.get(url).json()
     return response
