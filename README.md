@@ -10,24 +10,25 @@
 
 ![sorting_algorithms](./Docs/sorting_algorithms.png)
 
+## DFS
+
+> BJ GOLD > [파이프 옮기기 1](./BJ%20Gold/g5_17070.py),
+
 ## BFS, DFS
 
-> [BJ SILVER]
-> [늑대와 양](./BJ%20Silver/s3_16956.py),
+> BJ SILVER > [늑대와 양](./BJ%20Silver/s3_16956.py),
 > [바이러스](./BJ%20Silver/s3_2606.py),
 > [유기농 배추](./BJ%20Silver/s2_1012.py),
 > [DFS와 BFS](./BJ%20Silver/s2_1260.py),
 > [효율적인 해킹](./BJ%20Silver/s1_1325.py),
 > [Best Grass](./BJ%20Silver/s5_6186.py),
 > [The Game of Death](./BJ%20Silver/s4_11558.py),
->
-> [SWEA D4]
-> [정사각형 방](./SWEA%20D4/d4_1861.py),
+> <br>SWEA D4 > [정사각형 방](./SWEA%20D4/d4_1861.py),
 
 ## Dynamic Programming
 
-> [BJ Silver]
-> [1로 만들기](./BJ%20Silver/s3_1462.py),
+> BJ Silver > [1로 만들기](./BJ%20Silver/s3_1462.py),
+> <br>BJ GOLD > [파이프 옮기기 1](./BJ%20Gold/g5_17070.py),
 
 부분 문제 반복(Overlapping subproblems)과 최적 부분 구조(Optimal substructure)에서 시간 최적화
 
