@@ -12,9 +12,10 @@
 
 ## DFS
 
-> BJ GOLD > [파이프 옮기기 1](./BJ%20Gold/g5_17070.py),
+> BJ SILVER > [DFS와 BFS](./BJ%20Silver/s2_1260.py),
+> <br>BJ GOLD > [파이프 옮기기 1](./BJ%20Gold/g5_17070.py),
 
-## BFS, DFS
+## BFS
 
 > BJ SILVER > [늑대와 양](./BJ%20Silver/s3_16956.py),
 > [바이러스](./BJ%20Silver/s3_2606.py),
@@ -23,6 +24,7 @@
 > [효율적인 해킹](./BJ%20Silver/s1_1325.py),
 > [Best Grass](./BJ%20Silver/s5_6186.py),
 > [The Game of Death](./BJ%20Silver/s4_11558.py),
+> [섬의 개수](./BJ%20Silver/s2_4963.py),
 > <br>SWEA D4 > [정사각형 방](./SWEA%20D4/d4_1861.py),
 
 ## Dynamic Programming
