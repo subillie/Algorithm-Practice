@@ -3,7 +3,7 @@ from itertools import product
 from collections import deque
 from copy import deepcopy
 
-def boom(board, y, x):
+def boom(board: list, y: int, x: int) -> None:
     queue = deque([(x, y, board[y][x])])
     board[y][x] = 0
     while queue:
@@ -16,7 +16,7 @@ def boom(board, y, x):
                     queue.append((nx, ny, board[ny][nx]))
                     board[ny][nx] = 0
 
-def apply_gravity(board):
+def apply_gravity(board: list) -> None:
     for x in range(W):
         tmp = []
         for y in range(H):
@@ -25,7 +25,7 @@ def apply_gravity(board):
         for y in range(H - 1, -1, -1):
             board[y][x] = tmp.pop() if tmp else 0
 
-def simulate(prod, board):
+def simulate(prod: tuple, board: list) -> int:
     board = deepcopy(board)
     for x in prod:
         for y in range(H):
