@@ -9,7 +9,7 @@ public class d2_1989 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int T = Integer.valueOf(br.readLine());
 		for (int t = 1; t <= T; t++) {
-			StringBuffer word = new StringBuffer(br.readLine().trim());
+			StringBuffer word = new StringBuffer(br.readLine());
 			String originalWord = word.toString();
 			String reversedWord = word.reverse().toString();
 			int answer = originalWord.equals(reversedWord) ? 1 : 0;
