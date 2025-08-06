@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class d2_1984 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int T = Integer.parseInt(br.readLine().trim());
+		int T = Integer.parseInt(br.readLine());
 		for (int t = 1; t <= T; t++) {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 			float sum = 0;
