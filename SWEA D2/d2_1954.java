@@ -30,6 +30,7 @@ public class d2_1954 {
                 x = nx;
                 y = ny;
             }
+
             // 출력
             sb.append("#").append(t).append("\n");
             for (int i = 0; i < N; i++) {
