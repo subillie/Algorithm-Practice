@@ -9,8 +9,8 @@ public class d3_1213 {
 		
 		for (int t = 1; t <= 10; t++) {
 			int T = Integer.valueOf(br.readLine());
-			String target = br.readLine().trim();
-			String str = br.readLine().trim();
+			String target = br.readLine();
+			String str = br.readLine();
 			
 			int count = 0;
             // 방법1 : 이중 for문 돌기
