@@ -1,7 +1,7 @@
 // 1936 1대1 가위바위보
 import java.util.Scanner;
 
-class Solution {
+public class d1_1936 {
     public static void main(String[] args) throws Exception{
         Scanner sc = new Scanner(System.in);
         
