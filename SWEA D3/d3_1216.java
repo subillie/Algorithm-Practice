@@ -5,26 +5,24 @@ import java.io.InputStreamReader;
 
 public class d3_1216 {
 
-    static boolean isPalindrome(String word) {
-        int len = word.length();
-        for (int i = 0; i < len / 2; i++) {
-            if (word.charAt(i) != word.charAt(len - i - 1)) {
-                return false;
-            }
-        }
-        return true;
+    static boolean isPalindrome(String line, int beginIndex, int wordLen) {
+    	for (int i = 0; i < wordLen / 2; i++) {
+    		if (line.charAt(beginIndex + i) != line.charAt(beginIndex + wordLen - i - 1)) {
+    			return false;
+    		}
+    	}
+    	return true;
     }
 
-    static int getLongestLen(String line) {
-        for (int wordLen = 100; wordLen > 0; wordLen--) {
+    static int getMaxPalindrome(String line, int maxLen) {
+        for (int wordLen = 100; wordLen > maxLen; wordLen--) {
             for (int beginIndex = 0; beginIndex <= 100 - wordLen; beginIndex++) {
-                String word = line.substring(beginIndex, beginIndex + wordLen);
-                if (isPalindrome(word)) {
+                if (isPalindrome(line, beginIndex, wordLen)) {
                     return wordLen;
                 }
             }
         }
-        return 0;
+        return maxLen;
     }
 
     public static void main(String[] args) throws IOException {
@@ -39,16 +37,15 @@ public class d3_1216 {
             for (int i = 0; i < 100; i++) {
                 String line = br.readLine();  // 입력
                 mat[i] = line.toCharArray();
-                maxLen = Math.max(maxLen, getLongestLen(line));  // 가로 단어 체크
+                maxLen = getMaxPalindrome(line, maxLen);  // 가로 단어
             }
 
-            StringBuilder line = new StringBuilder();
             for (int i = 0; i < 100; i++) {
+                StringBuilder line = new StringBuilder();
                 for (int j = 0; j < 100; j++) {
                     line.append(mat[j][i]);
                 }
-                maxLen = Math.max(maxLen, getLongestLen(line.toString()));  // 세로 단어 체크
-                line.setLength(0);
+                maxLen = getMaxPalindrome(line.toString(), maxLen);  // 세로 단어
             }
 
             sb.append("#").append(T).append(" ").append(maxLen).append("\n");  // 출력
