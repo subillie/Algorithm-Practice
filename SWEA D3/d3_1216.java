@@ -33,7 +33,7 @@ public class d3_1216 {
             int T = Integer.valueOf(br.readLine());
             int maxLen = 0;
 
-            char[][] mat = new char[100][100];
+            char[][] mat = new char[100][];
             for (int i = 0; i < 100; i++) {
                 String line = br.readLine();  // 입력
                 mat[i] = line.toCharArray();
