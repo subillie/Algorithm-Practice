@@ -13,14 +13,14 @@ public class d4_5432 {
 		for (int t = 1; t <= T; t++) {
 			// 입력
 			char[] arr = br.readLine().toCharArray();
-			Stack<Boolean> sticks = new Stack<>();
+			Stack<Character> sticks = new Stack<>();
 
 			// Logic
 			boolean is_laser = false;
 			int count = 0;
 			for (int i = 0; i < arr.length; i++) {
 				if (arr[i] == '(') {
-					sticks.push(true);
+					sticks.push('(');
 					is_laser = true;
 					count++;
 				} else {
