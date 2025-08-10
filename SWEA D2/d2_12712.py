@@ -1,4 +1,4 @@
-# 12712 파리퇴치 3
+# 12712 파리퇴치3
 from collections import deque
 
 T = int(input())
