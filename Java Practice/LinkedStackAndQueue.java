@@ -100,7 +100,6 @@ class LinkedQueue<E> {
     }
 }
 
-
 // main (test code)
 public class LinkedStackAndQueue {
 	public static void main(String[] args) {
