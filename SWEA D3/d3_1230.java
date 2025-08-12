@@ -1,4 +1,4 @@
-// 1230 암호문3
+//1230 암호문3
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
@@ -52,11 +52,11 @@ public class d3_1230 {
 			}
 			
 			// Output
-			StringBuilder result = new StringBuilder();
+			sb.append("#").append(t).append(" ");
 			for (int i = 0; i < 10; i++) {
-				result.append(arr.pollFirst()).append(" ");
+				sb.append(arr.pollFirst()).append(" ");
 			}
-			sb.append("#").append(t).append(" ").append(result.toString()).append("\n");
+			sb.append("\n");
 		}
 		
 		System.out.println(sb.toString());
