@@ -9,32 +9,24 @@ public class d4_1861 {
   static int[] dx = {1, -1, 0, 0};
   static int[] dy = {0, 0, 1, -1};
 
-  public static int bfs(int i, int j) {
-    Queue<int[]> queue = new LinkedList<>();
-    boolean[][] visited = new boolean[N][N];
-
-    // 초기 상태
-    queue.add(new int[]{i, j});
-    visited[i][j] = true;
+  public static int bruteForce(int i, int j) {
+    int y = i;
+    int x = j;
     int count = 0;
-    int prev = mat[i][j];
+    boolean is_available = true;
 
-    // BFS
-    while (!queue.isEmpty()) {
-      int[] current = queue.poll();  // 이동
-      int y = current[0];
-      int x = current[1];
+    while (is_available) {
       count++;
-
+      is_available = false;
       for (int move = 0; move < 4; move++) {  // 사방 탐색
         int ny = y + dy[move];
         int nx = x + dx[move];
-        if (ny >= 0 && ny < N && nx >= 0 && nx < N && 
-          !visited[ny][nx] && mat[ny][nx] == prev + 1) {
-          queue.add(new int[]{ny, nx});  // 이동 계획에 추가
-          visited[ny][nx] = true;  // 방문 표시
-          prev++;  // "각 방에 적힌 숫자가 모두 다르다"는 조건이 있으므로
-          break;  // 이동 가능하면 즉시 break
+        // "각 방에 적힌 숫자가 모두 다르다"는 조건이 있으므로, 이동 가능하면 즉시 break
+        if (ny >= 0 && ny < N && nx >= 0 && nx < N && mat[ny][nx] == mat[y][x] + 1) {
+          x = nx;
+          y = ny;
+          is_available = true;
+          break;
         }
       }
     }
@@ -82,7 +74,7 @@ public class d4_1861 {
       dp = new int[N][N];
       for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-          // int count = bfs(i, j);
+          // int count = bruteForce(i, j);
           int count = dfs(i, j);
 
           if (count > maxCount) {
