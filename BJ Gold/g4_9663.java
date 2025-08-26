@@ -3,7 +3,7 @@ import java.io.*;
 
 public class g4_9663 {
 	static int N, count = 0;
-	static int[] f;  // y = f[x] 방식으로 좌표 저장
+	static int[] f;  // y = f[x] 개념으로 생각
 	
 	static void nQueen(int X) {
 		// Base case
