@@ -56,7 +56,7 @@ class mock_4012 {
       }
 
       // Logic
-      combination(0,0);
+      combination(0, 0);
 
       // Output
       sb.append("#").append(t).append(" ").append(answer).append("\n");
