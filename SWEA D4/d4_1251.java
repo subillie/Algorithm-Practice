@@ -80,12 +80,13 @@ public class d4_1251 {
      * @param edges 터널 후보 리스트
      * @return      최종 환경 부담금
      */
-    private static long kruskal(int N, double E, List<Edge> edges) {
+    private static long kruskal(int N, double E, PriorityQueue<Edge> edges) {
         DisjointSet ds = new DisjointSet(N);  // makeSet
         long cost = 0;
         int count = 0;
 
-        for (Edge e: edges) {
+        while (!edges.isEmpty()) {
+            Edge e = edges.poll();
             if (ds.union(e.from, e.to)) {
                 // true: 두 섬이 이전에 연결되어있지 않았음 -> 이 터널(간선)을 MST에 포함시킴
                 // false: 이미 다른 경호를 통해 연결되어 있음 -> 추가하면 사이클이 발생하므로 무시
@@ -124,16 +125,15 @@ public class d4_1251 {
             double E = Double.parseDouble(br.readLine()); // 환경 부담 세율
 
             // Logic
-            List<Edge> edges = new ArrayList<>();
+            PriorityQueue<Edge> edges = new PriorityQueue<>();
             for (int i = 0; i < N; i++) { // 가능한 모든 간선 생성
                 for (int j = i + 1; j < N; j++) {
                     long dx = islands[i].x - islands[j].x;
                     long dy = islands[i].y - islands[j].y;
                     long distSquared = dx * dx + dy * dy;
-                    edges.add(new Edge(islands[i].id, islands[j].id, distSquared));
+                    edges.offer(new Edge(islands[i].id, islands[j].id, distSquared));
                 }
             }
-            Collections.sort(edges); // 비용이 적은 순서대로 정렬 (오름차순)
 
             // Output by Kruskal Algorithm
             sb.append("#").append(t).append(" ").append(kruskal(N, E, edges)).append("\n");
