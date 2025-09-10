@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.*;
 
-public class d4_1251 {
+public class d4_1251_kruskal {
     /**
      * 서로소 집합의 구현과 연산에 사용될 클래스
      */
