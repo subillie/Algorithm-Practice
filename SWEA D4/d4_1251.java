@@ -67,7 +67,6 @@ public class d4_1251 {
 
         @Override
         public int compareTo(Edge o) {
-            // long 타입 비교 시에는 직접 빼기보다 Long.compare 사용 권장
             return Long.compare(this.distSquared, o.distSquared);
         }
     }
