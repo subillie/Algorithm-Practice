@@ -20,7 +20,7 @@ public class d4_1251_prim {
      * 터널(간선)의 정보를 저장할 클래스
      */
     private static class Edge implements Comparable<Edge> {
-        int to;  // 도착 섬 ID
+        int to; // 도착 섬 ID
         long distSquared; // 거리 제곱
 
         public Edge(int to, long distSquared) {
@@ -49,7 +49,7 @@ public class d4_1251_prim {
         long cost = 0;
         int count = 0;
 
-        pq.add(new Edge(0, 0));  // 시작점
+        pq.add(new Edge(0, 0)); // 시작점
         
         while (!pq.isEmpty() && count < N) {
             Edge cur = pq.poll();
