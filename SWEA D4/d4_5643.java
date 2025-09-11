@@ -6,13 +6,16 @@ public class d4_5643 {
     private static int N, count;
     private static boolean[] visited;
 
-    private static void dfs(List<Integer>[] graph, int cur) {
+    private static void dfs(BitSet[] graph, int cur) {
         visited[cur] = true;
-        for (int next: graph[cur]) {
+        
+        int next = graph[cur].nextSetBit(0);
+        while (next >= 0) {
             if (!visited[next]) {
                 count++;
                 dfs(graph, next);
             }
+            next = graph[cur].nextSetBit(next + 1);
         }
     }
 
@@ -26,11 +29,11 @@ public class d4_5643 {
             N = Integer.parseInt(br.readLine());
             int M = Integer.parseInt(br.readLine());
             
-            List<Integer>[] graph = new ArrayList[N + 1];
-            List<Integer>[] revGraph = new ArrayList[N + 1];
+            BitSet[] graph = new BitSet[N + 1];
+            BitSet[] revGraph = new BitSet[N + 1];
             for (int i = 1; i <= N; i++) {
-                graph[i] = new ArrayList<>();
-                revGraph[i] = new ArrayList<>();
+                graph[i] = new BitSet(N + 1);
+                revGraph[i] = new BitSet(N + 1);
             }
 
             for (int i = 0; i < M; i++) {
@@ -38,18 +41,19 @@ public class d4_5643 {
                 int a = Integer.parseInt(st.nextToken());
                 int b = Integer.parseInt(st.nextToken());
 
-                graph[a].add(b);    // a -> b (a는 b보다 작다)
-                revGraph[b].add(a); // b -> a (b는 a보다 크다)
+                graph[a].set(b);    // a -> b (a는 b보다 작다)
+                revGraph[b].set(a); // b -> a (b는 a보다 크다)
             }
 
             // Logic
             int answer = 0;
+            visited = new boolean[N + 1];
             for (int i = 1; i <= N; i++) {
                 count = 0;
 
-                visited = new boolean[N + 1];
+                Arrays.fill(visited, false);
                 dfs(graph, i); // 나보다 키 큰 사람 수 세기
-                visited = new boolean[N + 1];
+                Arrays.fill(visited, false);
                 dfs(revGraph, i); // 나보다 키 작은 사람 수 세기
 
                 if (count == N - 1) { // 카운트가 나 제외 N-1이면 정답
