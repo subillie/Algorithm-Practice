@@ -48,10 +48,8 @@ public class g4_1197 {
     }
 
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-
         //Input
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         int V = Integer.parseInt(st.nextToken()); // 정점의 개수
         int E = Integer.parseInt(st.nextToken()); // 간선의 개수
