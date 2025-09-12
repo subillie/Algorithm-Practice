@@ -7,10 +7,10 @@ public class d4_5643 {
     private static BitSet[] graph;
 
     private static void floydWarshall() {
-        for (int j = 1; j <= N; j++) {     // j: 중간 경유지
+        for (int k = 1; k <= N; k++) {     // k: 중간 경유지
             for (int i = 1; i <= N; i++) { // i: 출발지
-                if (graph[i].get(j)) {     // i -> j 경로가 존재한다면
-                    graph[i].or(graph[j]); // i는 j의 경로 사용 가능하므로 합집합 연산 수행
+                if (graph[i].get(k)) {     // i -> k 경로가 존재한다면
+                    graph[i].or(graph[k]); // i는 k의 경로 사용 가능하므로 합집합 연산 수행
                 }
             }
         }
