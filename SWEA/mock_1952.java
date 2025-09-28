@@ -3,14 +3,14 @@ import java.io.*;
 import java.util.*;
 
 public class mock_1952 {
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		
-		int T = Integer.parseInt(br.readLine());
-		for (int t = 1; t <= T; t++) {
-            // Input
-			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    StringBuilder sb = new StringBuilder();
+    
+    int T = Integer.parseInt(br.readLine());
+    for (int t = 1; t <= T; t++) {
+      // Input
+      StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             int day = Integer.parseInt(st.nextToken());
             int month = Integer.parseInt(st.nextToken());
             int months = Integer.parseInt(st.nextToken());
@@ -34,11 +34,11 @@ public class mock_1952 {
                     cost[i] = Math.min(cost[i], cost[i - 3] + months);
                 }
             }
-			
-            // Output
-			sb.append("#").append(t).append(" ").append(Math.min(cost[12], year)).append("\n");
-		}
-		
-		System.out.println(sb.toString());
-	}
+      
+      // Output
+      sb.append("#").append(t).append(" ").append(Math.min(cost[12], year)).append("\n");
+    }
+    
+    System.out.println(sb.toString());
+  }
 }
